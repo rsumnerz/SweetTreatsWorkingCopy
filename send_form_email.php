@@ -18,12 +18,7 @@ if(isset($_POST['email'])) {
     if(!isset($_POST['first_name']) ||
         !isset($_POST['last_name']) ||
         !isset($_POST['phone'])||
-        !isset($_POST['email']) ||        
-        !isset($_POST['comments'])||
-        !isset($_POST['cakeSize'])||
-        !isset($_POST['cakeFav'])||
-        !isset($_POST['cakeFil'])||
-        !isset($_POST['cakeIce'])) {
+        !isset($_POST['email'])){
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
  
@@ -31,12 +26,14 @@ if(isset($_POST['email'])) {
     $last_name = $_POST['last_name']; // required
     $phone = $_POST['phone'];//required
     $email_from = $_POST['email']; // required    
-    $comments = $_POST['comments']; // required
+    $comments = $_POST['comments']; 
     $cakeSize = $_POST['cakeSize'];
     $cakeFav = $_POST['cakeFav'];
     $cakeFil = $_POST['cakeFil'];
     $cakeIce = $_POST['cakeIce'];
-    
+    $cupCake = $_POST['cupCake'];
+    $cupFav = $_POST['cupFav'];
+    $cupIce = $_POST['cupIce'];
  
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
@@ -70,12 +67,17 @@ if(isset($_POST['email'])) {
     $email_message .= "First Name: ".clean_string($first_name)."\n";
     $email_message .= "Last Name: ".clean_string($last_name)."\n";
     $email_message .= "Phone Number: ".clean_string($phone)."\n";
-    $email_message .= "Email: ".clean_string($email_from)."\n"; 
+    $email_message .= "Email: ".clean_string($email_from)."\n\n"; 
+    
     $email_message .= "Cake Size: ".$cakeSize."\n";   
     $email_message .= "Cake Flavor: ".$cakeFav."\n";   
     $email_message .= "Cake Fill: ".$cakeFil."\n";   
-    $email_message .= "Cake Icing: ".$cakeIce."\n";   
-
+    $email_message .= "Cake Icing: ".$cakeIce."\n\n";
+    
+    $email_message .= "Cup Cakes: ".$cupCake."\n";
+    $email_message .= "Cup Cake Flavor: ".$cupFav."\n";
+    $email_message .= "Cup Cake Icing: ".$cupIce."\n\n";   
+    
     $email_message .= "Comments: ".clean_string($comments)."\n";
  
 // create email headers
