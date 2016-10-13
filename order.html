@@ -23,6 +23,48 @@
 	<!--Create style sheet-->
 	<!--================End CSS======================-->
 
+  <!--FORM VALIDATION-->
+  <script type="text/javascript">
+    function validate(form){
+      fail = validatefname(orderform.first_name.value)
+      fail += validatelname(orderform.last_name.value)
+      fail += validatephone(orderform.phone.value)
+      fail += validateemail(orderform.email.value)
+      fail += validateorder(orderform.cakeSize.value, orderform.cakeFav.value, orderform.cakeFil.value, orderform.cakeIce.value, orderform.cupCake.value, orderform.cupFav.value, orderform.cupIce.value)
+     
+      if(fail=="") return true
+      else{
+        alert(fail);
+        return false
+      }
+    }
+    function validatefname(field){
+      return (field=="") ? "Please enter your First Name.\n" : "";
+    }
+    function validatelname(field){
+      return (field=="") ? "Please enter your Last Name.\n" : "";
+    }
+    function validatephone(field){
+      return (field=="") ? "Please enter your Phone Number.\n" : "";
+    }
+    function validateemail(field){
+      return (field=="") ? "Please enter your Email.\n" : "";
+    }
+    function validateorder(cakeSize, cakeFav, cakeFil, cakeIce, cupCake,cupFav,cupIce){
+      if (cakeSize == "" && cupCake=="") return "You must select to order a cake or cupcakes.\n";
+      
+      else if (cakeSize != "" && cupCake != "") return "You must choose either cake or cupcakes for this order.\n";
+      else if(cakeSize != "" && cupCake ==""){
+        if(cakeFav == "" || cakeFil =="" || cakeIce =="")return"You must select all 3 options \n Cake Flavor \n Cake Filling and \n Cake Icing\n";
+        else return "";
+      }
+      else if (cakeSize == "" && cupCake !=""){
+        if(cupFav=="" || cupIce =="")return"You must select both options \n Cupcake Flavor and \n Cupcake Icing.\n"
+        else return "";
+      }
+    }
+  </script>
+  <!--FORM VALIDATION END-->
 
 </head>
 <body data-spy="scroll" data-target="#my-navbar">
@@ -72,7 +114,7 @@
 				<h2>Order Form<small> </small></h2>
 			</div><!--End Page Header services-->
 			
-			<form class="form-horizontal" name="commentform" method="post" action="send_form_email.php">
+			<form class="form-horizontal" name="orderform" method="post" action="send_form_email.php" onsubmit="return validate(this)">
 	<legend>Customer Information</legend>
     <div class="form-group">
         <label class="control-label col-md-4" for="first_name">First Name</label>
@@ -106,9 +148,9 @@
       <span class="col-md-6">
       <select class="form-control" name="cakeSize" id="cakeSize">
         <option value="" selected="selected">Please select</option>
-        <option value="6 inch">6" 6-8ppl 16.00</option>
-        <option value="8 inch">8" 15-17ppl 25.00</option>
-        <option value="10 inch">10" 25-27ppl 48.00</option>
+        <option value="6 inch">6" 6-8ppl</option>
+        <option value="8 inch">8" 15-17ppl</option>
+        <option value="10 inch">10" 25-27ppl</option>
       </select></span>
       </div>
       <div class="form-group">
@@ -147,22 +189,23 @@
       <div class="form-group">
       <label class="control-label col-md-4" for="cupCake">Cup Cakes:</label>
       <span class="col-md-6">
-      <div class="checkbox" id="cupCake">
-		  <label><input type="checkbox" value="6">6 Cup Cakes</label>
-		</div>
-		<div class="checkbox">
-		  <label><input type="checkbox" value="12">12 Cup Cakes</label>
-		</div>
-		<div class="checkbox">
-		  <label><input type="checkbox" value="24">24 Cup Cakes</label>
-		</div>
-        
+      <select class="form-control" name="cupCake" id="cupCake">
+       <option value="" selected="selected">Please select</option>
+        <option value="6 cupcakes">6 cupcakes</option>
+        <option value="12 cupcakes">12 cupcakes</option>
+        <option value="18 cupcakes">18 cupcakes</option>
+        <option value="24 cupcakes">24 cupcakes</option>
+        <option value="30 cupcakes">30 cupcakes</option>
+        <option value="36 cupcakes">36 cupcakes</option>
+        <option value="42 cupcakes">42 cupcakes</option>
+        <option value="48 cupcakes">48 cupcakes</option>
+        </select>
      </span>
       </div>
       <div class="form-group">
       <label class="control-label col-md-4" for="cupFav">Cup Cake Flavor (select one):</label>
       <span class="col-md-6"><select class="form-control" id="cupFav">
-        <option></option>
+        <option value="" selected="selected">Please select</option>
         <option>Chocolate</option>
         <option>White</option>
         <option>Yellow</option>
@@ -172,7 +215,7 @@
       <div class="form-group">
       <label class="control-label col-md-4" for="cupIce">Cup Cake Icing(select one):</label>
       <span class="col-md-6"><select class="form-control" id="cupIce">
-        <option></option>
+        <option value="" selected="selected">Please select</option>
         <option>Butter Cream</option>
         <option>Whipped Cream</option>
         <option>Better Cream</option>
@@ -181,9 +224,9 @@
       
       <legend>Additional Information</legend>
     <div class="form-group">
-        <label class="control-label col-md-4" for="comment">Question or Comment</label>
+        <label class="control-label col-md-4" for="comment">Please enter additional details:</label>
         <div class="col-md-6">
-            <textarea rows="6" class="form-control" id="comments" name="comments" placeholder="Your question or comment here"></textarea>
+            <textarea rows="6" class="form-control" id="comments" name="comments" placeholder="example desired colors and writing"></textarea>
         </div>
     </div>
     <div class="form-group">
