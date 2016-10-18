@@ -1,9 +1,11 @@
 <?php
+
 if(isset($_POST['email'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
     $email_to = "annmarietorres@outlook.com";
     $email_subject = "ATTENTION: You have a order";
+    $email_subject2 = "Your cake order confermation-do not reply to this email address";
  
     function died($error) {
         // your error code can go here
@@ -12,21 +14,26 @@ if(isset($_POST['email'])) {
         echo $error."<br /><br />";
         echo "Please go back and fix these errors.<br /><br />";
         die();
+
     }
  
     // validation expected data exists
     if(!isset($_POST['first_name']) ||
         !isset($_POST['last_name']) ||
         !isset($_POST['phone'])||
-        !isset($_POST['email'])){
+        !isset($_POST['email'])||
+        !isset($_POST['pickUpDate'])){
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
  
     $first_name = $_POST['first_name']; // required
     $last_name = $_POST['last_name']; // required
     $phone = $_POST['phone'];//required
-    $email_from = $_POST['email']; // required    
+    $email_from = $_POST['email']; // required
+    $pickUpDate= $_POST['pickUpDate']; // required
+    
     $comments = $_POST['comments']; 
+    $numPeople = $_POST['numPeople'];
     $cakeSize = $_POST['cakeSize'];
     $cakeFav = $_POST['cakeFav'];
     $cakeFil = $_POST['cakeFil'];
@@ -34,7 +41,7 @@ if(isset($_POST['email'])) {
     $cupCake = $_POST['cupCake'];
     $cupFav = $_POST['cupFav'];
     $cupIce = $_POST['cupIce'];
- 
+    $pic = $_POST['pic'];
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
   if(!preg_match($email_exp,$email_from)) {
@@ -67,9 +74,12 @@ if(isset($_POST['email'])) {
     $email_message .= "First Name: ".clean_string($first_name)."\n";
     $email_message .= "Last Name: ".clean_string($last_name)."\n";
     $email_message .= "Phone Number: ".clean_string($phone)."\n";
-    $email_message .= "Email: ".clean_string($email_from)."\n\n"; 
+    $email_message .= "Email: ".clean_string($email_from)."\n"; 
+    $email_message .= "Pick up date: ".$pickUpDate."\n\n";
     
-    $email_message .= "Cake Size: ".$cakeSize."\n";   
+
+    $email_message .= "Cake Size: ".$cakeSize."\n"; 
+    $email_message .= "Number of people: ".$numPeople."\n";  
     $email_message .= "Cake Flavor: ".$cakeFav."\n";   
     $email_message .= "Cake Fill: ".$cakeFil."\n";   
     $email_message .= "Cake Icing: ".$cakeIce."\n\n";
@@ -77,7 +87,7 @@ if(isset($_POST['email'])) {
     $email_message .= "Cup Cakes: ".$cupCake."\n";
     $email_message .= "Cup Cake Flavor: ".$cupFav."\n";
     $email_message .= "Cup Cake Icing: ".$cupIce."\n\n";   
-    
+    $email_message .= "Image on Cake: ".$pic."\n\n";
     $email_message .= "Comments: ".clean_string($comments)."\n";
  
 // create email headers
@@ -85,8 +95,14 @@ $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
 @mail($email_to, $email_subject, $email_message, $headers);
+
+//header for confermation email
+$headers2 = 'From: '.$email_to."\r\n".
+'Reply-To: '.$email_to."\r\n" .
+'X-Mailer: PHP/' . phpversion();
+@mail($email_from, $email_subject2, $email_message, $headers2);
 sleep(2);
-echo "<meta http-equiv='refresh' content=\"0; url=http://nameincode.com/thankyou.html\">";
+echo "<meta http-equiv='refresh' content=\"0; url=http://nameincode.com/ThankYou.html\">";
 ?>
  
 <?php

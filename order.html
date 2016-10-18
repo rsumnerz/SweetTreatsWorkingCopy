@@ -30,6 +30,7 @@
       fail += validatelname(orderform.last_name.value)
       fail += validatephone(orderform.phone.value)
       fail += validateemail(orderform.email.value)
+      fail += validatedate(orderform.pickUpDate.value)
       fail += validateorder(orderform.cakeSize.value, orderform.cakeFav.value, orderform.cakeFil.value, orderform.cakeIce.value, orderform.cupCake.value, orderform.cupFav.value, orderform.cupIce.value)
      
       if(fail=="") return true
@@ -50,6 +51,9 @@
     function validateemail(field){
       return (field=="") ? "Please enter your Email.\n" : "";
     }
+    function validatedate(field){
+      return (field=="")? "Please enter your Pick up Date and Time.\n" : "";
+    }
     function validateorder(cakeSize, cakeFav, cakeFil, cakeIce, cupCake,cupFav,cupIce){
       if (cakeSize == "" && cupCake=="") return "You must select to order a cake or cupcakes.\n";
       
@@ -63,6 +67,16 @@
         else return "";
       }
     }
+
+
+      function changeSelect(){
+        if (document.getElementById("cakeSize").value!="customSheet"){
+          document.getElementById("numPeople").value ="";
+          document.getElementById("numPeople").setAttribute("disabled", true);
+
+        }else document.getElementById("numPeople").removeAttribute("disabled");
+      }  
+     
   </script>
   <!--FORM VALIDATION END-->
 
@@ -114,7 +128,7 @@
 				<h2>Order Form<small> </small></h2>
 			</div><!--End Page Header services-->
 			
-			<form class="form-horizontal" name="orderform" method="post" action="send_form_email.php" onsubmit="return validate(this)">
+			<form class="form-horizontal" name="orderform" method="post" action="send_form_email.php" enctype="multipart/form-data" onsubmit="return validate(this)">
 	<legend>Customer Information</legend>
     <div class="form-group">
         <label class="control-label col-md-4" for="first_name">First Name</label>
@@ -136,22 +150,44 @@
     </div>
     <div class="form-group">
         <label class="control-label col-md-4" for="email">Email Address</label>
-        <div class="col-md-6 input-group">
-        <span class="input-group-addon">@</span>
+        <div class="col-md-6">
+        <!--<span class="input-group-addon">@</span>-->
             <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"/>
         </div>
     </div>
+    <!--pickup date and time-->
+    <div class="form-group">
+      <label class="control-label col-md-4" for="pickUpDate">Pick Up Date:</label>
+      <span class="col-md-6">
+        <input type="datetime-local" class="form-control" name="pickUpDate" id="pickUpDate">
+      </span>
+    </div>
+
+  <!--end pickup date and time-->
     <fieldset>
     <legend>Cake Order</legend>
+
+  
+
     <div class="form-group">
       <label class="control-label col-md-4" for="cakeSize">Cake Size(select one):</label>
       <span class="col-md-6">
-      <select class="form-control" name="cakeSize" id="cakeSize">
+      <select class="form-control" name="cakeSize" id="cakeSize" onchange="changeSelect();">
         <option value="" selected="selected">Please select</option>
-        <option value="6 inch">6" 6-8ppl</option>
-        <option value="8 inch">8" 15-17ppl</option>
-        <option value="10 inch">10" 25-27ppl</option>
+        <option value="6 inch">6" round</option>
+        <option value="8 inch">8" round</option>
+        <option value="10 inch">10" round</option>
+        <option value="Custom Sheet">Custom Sheet</option>
       </select></span>
+      </div>
+
+      
+      
+      <div class="form-group">
+      <label class="control-label col-md-4" for="numPeople">Number of People:</label>
+      <div class="col-md-6">
+            <input type="text" class="form-control" id="numPeople" name="numPeople" placeholder="Number of People For Custom Sheet Cake only" disabled="true">
+        </div>
       </div>
       <div class="form-group">
       <label class="control-label col-md-4" for="cakeFav">Cake Flavor (select one):</label>
@@ -159,9 +195,15 @@
       <select class="form-control" name="cakeFav" id="cakeFav">
         <option value="" selected="selected">Please select</option>
         <option value="Chocolate Cake">Chocolate</option>
-        <option value="White Cake">White</option>
-        <option value="Yellow Cake">Yellow</option>
-        <option value="Red Cake">Red Velvet</option>
+        <option value="RedVelvet">Red Velvet</option>
+        <option value="Vanilla">Vanilla</option>
+        <option value="Oreo">Oreo</option>
+        <option value="Raspberry">Raspberry</option>
+        <option value="Strawberry">Strawberry</option>
+        <option value="Lemon">Lemon</option>
+        <option value="Coconut">Coconut</option>
+        <option value="Almond">Almond</option>
+        
       </select></span>
       </div>
       <div class="form-group">
@@ -169,9 +211,20 @@
       <span class="col-md-6">
       <select class="form-control" name="cakeFil" id="cakeFil">
         <option value="" selected="selected">Please select</option>
-        <option value="Chocolate pudding">Choc pudding</option>
-        <option value="Vanilla Pudding">Vanilla pudding</option>
-        <option Value="Strawberry">Strawberry</option>
+        <option value="Chocolate">Chocolate</option>
+        <option value="Vanilla">Vanilla</option>
+        <option Value="CreamCheese">Cream Cheese</option>
+        <option value="Oreo">Oreo</option>
+        <option value="Raspberry">Raspberry</option>
+        <option value="Strawberry">Strawberry</option>
+        <option value="Funfetti">Funfetti</option>
+        <option value="Caramel">Caramel</option>
+        <option value="Coconut">Coconut</option>
+        <option value="Lemon">Lemon</option>
+        <option value="Almond">Almond</option>
+        <option value="PeanutButter">Peanut Butter</option>
+        <option value="Cannoli">Cannoli</option>
+        <option value="StrawberryBanana">Strawberry Banana</option>
       </select></span>
       </div>
       <div class="form-group">
@@ -180,8 +233,8 @@
       <select class="form-control" name="cakeIce" id="cakeIce">
         <option value="" selected="selected">Please select</option>
         <option value="Butter Cream">Butter Cream</option>
-        <option value="Whipped Cream">Whipped Cream</option>
-        <option value="Better Cream">Better Cream</option>
+        <option value="Chocolate Butter Cream">Chocolate Butter Cream</option>
+        
       </select></span>
       </div>
       </fieldset>
@@ -207,10 +260,15 @@
       <span class="col-md-6">
       <select class="form-control" name="cupFav" id="cupFav">
         <option value="" selected="selected">Please select</option>
-        <option>Chocolate</option>
-        <option>White</option>
-        <option>Yellow</option>
-        <option>Red Velvet</option>
+        <option value="Chocolate Cake">Chocolate</option>
+        <option value="RedVelvet">Red Velvet</option>
+        <option value="Vanilla">Vanilla</option>
+        <option value="Oreo">Oreo</option>
+        <option value="Raspberry">Raspberry</option>
+        <option value="Strawberry">Strawberry</option>
+        <option value="Lemon">Lemon</option>
+        <option value="Coconut">Coconut</option>
+        <option value="Almond">Almond</option>
       </select></span>
       </div>
       <div class="form-group">
@@ -218,13 +276,20 @@
       <span class="col-md-6">
       <select class="form-control" name="cupIce" id="cupIce">
         <option value="" selected="selected">Please select</option>
-        <option>Butter Cream</option>
-        <option>Whipped Cream</option>
-        <option>Better Cream</option>
+        <option value="Butter Cream">Butter Cream</option>
+        <option value="Chocolate Butter Cream">Chocolate Butter Cream</option>
       </select></span>
       </div>
       
       <legend>Additional Information</legend>
+      <div class="form-group">
+      <label class="control-label col-md-4" for="pic">Picture on Cake:</label>
+      <span class="col-md-6">
+      <select class="form-control" name="pic" id="pic">
+        <option value="No" selected="selected">No</option>
+        <option value="Yes">Yes</option>
+      </select></span>
+      </div>
     <div class="form-group">
         <label class="control-label col-md-4" for="comment">Please enter additional details:</label>
         <div class="col-md-6">

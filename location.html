@@ -81,16 +81,27 @@
 
 
 <!--Location-->
-<div id="map-container" class="col-md-6"></div>
+<!--<div id="map-container" class="col-md-6"></div>-->
 <!---->
-<!---->
-	<div class="container">
+<div class="container">
 		<section id="section-location">
 			<div class="page-header text-center" id="Location">
 				<h2>Location and Hours<small> </small></h2>
 			</div><!--End Page Header services-->
-			
+			<div class="col-md-7">
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+<div style='overflow:hidden;height:440px;width:100%;'>
+<div id='gmap_canvas' style='height:440px;width:100%;'></div>
+<div><small><a href="http://embedgooglemaps.com">embed google maps</a></small></div>
+<div><small><a href="https://termsofusegenerator.net">terms of use example</a></small></div>
+<style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
+<script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(39.84736150000001,-74.18508780000002),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(39.84736150000001,-74.18508780000002)});infowindow = new google.maps.InfoWindow({content:'<strong>sweet treats and Ice Cream</strong><br>249 north main st forked river nj<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+<!---->
+	</div>
+	
+	<div class="col-md-5">
 			<address class="text-center">
+			</br>
 						<h2><strong>Sweet Treats and Ice Cream</strong></h2>
 						<h4> 249 N Main St</br>
 						Forked River, NJ</br></br>
@@ -104,9 +115,10 @@
 						<a href="https://www.facebook.com/sweettreatsnj"><i class="fa fa-facebook"></i></a>
 						<a href="https://github.com/AnnMarieTorres"><i class="fa fa-instagram"></i></a>
 					</div>		
-
+					</div>
 		</section><!--End section-services-->
 	</div>
+
 <!--End container services-->
 
 <footer>
