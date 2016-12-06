@@ -1,0 +1,220 @@
+{% include "_header.html"%}
+
+<!--Jumbotron-->
+	<div class="jumbotron sizeClass" style="background-image: url(../ImagesPro/tiramisu.jpg);">
+	  <div class="container">
+	    <h1>Order now!!!</h1>
+	  </div>
+	</div>
+<!--End Jumbotron-->
+
+
+<!--order-->
+	<div class="container">
+		<section id="section-order">
+			<div class="page-header text-center" id="order">
+				<h2>Order Form<small> </small></h2>
+			</div><!--End Page Header services-->
+			
+			<form class="form-horizontal" name="orderform" method="post" action="send_form_email.php" enctype="multipart/form-data" onsubmit="return validate(this)">
+	<legend>Customer Information</legend>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="first_name">First Name</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Last Name</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="phone">Phone Number</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="email">Email Address</label>
+        <div class="col-md-6">
+        <!--<span class="input-group-addon">@</span>-->
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"/>
+        </div>
+    </div>
+    <!--pickup date and time-->
+    <div class="form-group">
+      <label class="control-label col-md-4" for="pickUpDate">Pick Up Date:</label>
+      <span class="col-md-6">
+        <input type="datetime-local" class="form-control" name="pickUpDate" id="pickUpDate">
+      </span>
+    </div>
+
+  <!--end pickup date and time-->
+    <fieldset>
+    <legend>Cake Order</legend>
+
+  
+
+    <div class="form-group">
+      <label class="control-label col-md-4" for="cakeSize">Cake Size(select one):</label>
+      <span class="col-md-6">
+      <select class="form-control" name="cakeSize" id="cakeSize" onchange="changeSelect();">
+        <option value="" selected="selected">Please select</option>
+        <option value="6 inch">6" round</option>
+        <option value="8 inch">8" round</option>
+        <option value="10 inch">10" round</option>
+        <option value="Custom Sheet">Custom Sheet</option>
+      </select></span>
+      </div>
+
+      
+      
+      <div class="form-group">
+      <label class="control-label col-md-4" for="numPeople">Number of People:</label>
+      <div class="col-md-6">
+            <input type="text" class="form-control" id="numPeople" name="numPeople" placeholder="Number of People For Custom Sheet Cake only" disabled="true">
+        </div>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-md-4" for="cakeFav">Cake Flavor (select one):</label>
+      <span class="col-md-6">
+      <select class="form-control" name="cakeFav" id="cakeFav">
+        <option value="" selected="selected">Please select</option>
+        <option value="Chocolate Cake">Chocolate</option>
+        <option value="RedVelvet">Red Velvet</option>
+        <option value="Vanilla">Vanilla</option>
+        <option value="Oreo">Oreo</option>
+        <option value="Raspberry">Raspberry</option>
+        <option value="Strawberry">Strawberry</option>
+        <option value="Lemon">Lemon</option>
+        <option value="Coconut">Coconut</option>
+        <option value="Almond">Almond</option>
+        
+      </select></span>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-md-4" for="cakeFil">Cake Filling (select one):</label>
+      <span class="col-md-6">
+      <select class="form-control" name="cakeFil" id="cakeFil">
+        <option value="" selected="selected">Please select</option>
+        <option value="Chocolate">Chocolate</option>
+        <option value="Vanilla">Vanilla</option>
+        <option Value="CreamCheese">Cream Cheese</option>
+        <option value="Oreo">Oreo</option>
+        <option value="Raspberry">Raspberry</option>
+        <option value="Strawberry">Strawberry</option>
+        <option value="Funfetti">Funfetti</option>
+        <option value="Caramel">Caramel</option>
+        <option value="Coconut">Coconut</option>
+        <option value="Lemon">Lemon</option>
+        <option value="Almond">Almond</option>
+        <option value="PeanutButter">Peanut Butter</option>
+        <option value="Cannoli">Cannoli</option>
+        <option value="StrawberryBanana">Strawberry Banana</option>
+      </select></span>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-md-4" for="cakeIce">Cake Icing(select one):</label>
+      <span class="col-md-6">
+      <select class="form-control" name="cakeIce" id="cakeIce">
+        <option value="" selected="selected">Please select</option>
+        <option value="Butter Cream">Butter Cream</option>
+        <option value="Chocolate Butter Cream">Chocolate Butter Cream</option>
+        
+      </select></span>
+      </div>
+      </fieldset>
+      <legend>Cup Cake Order</legend>
+      <div class="form-group">
+      <label class="control-label col-md-4" for="cupCake">Cup Cakes:</label>
+      <span class="col-md-6">
+      <select class="form-control" name="cupCake" id="cupCake">
+       <option value="" selected="selected">Please select</option>
+        <option value="6 cupcakes">6 cupcakes</option>
+        <option value="12 cupcakes">12 cupcakes</option>
+        <option value="18 cupcakes">18 cupcakes</option>
+        <option value="24 cupcakes">24 cupcakes</option>
+        <option value="30 cupcakes">30 cupcakes</option>
+        <option value="36 cupcakes">36 cupcakes</option>
+        <option value="42 cupcakes">42 cupcakes</option>
+        <option value="48 cupcakes">48 cupcakes</option>
+        </select>
+     </span>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-md-4" for="cupFav">Cup Cake Flavor (select one):</label>
+      <span class="col-md-6">
+      <select class="form-control" name="cupFav" id="cupFav">
+        <option value="" selected="selected">Please select</option>
+        <option value="Chocolate Cake">Chocolate</option>
+        <option value="RedVelvet">Red Velvet</option>
+        <option value="Vanilla">Vanilla</option>
+        <option value="Oreo">Oreo</option>
+        <option value="Raspberry">Raspberry</option>
+        <option value="Strawberry">Strawberry</option>
+        <option value="Lemon">Lemon</option>
+        <option value="Coconut">Coconut</option>
+        <option value="Almond">Almond</option>
+      </select></span>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-md-4" for="cupIce">Cup Cake Icing(select one):</label>
+      <span class="col-md-6">
+      <select class="form-control" name="cupIce" id="cupIce">
+        <option value="" selected="selected">Please select</option>
+        <option value="Butter Cream">Butter Cream</option>
+        <option value="Chocolate Butter Cream">Chocolate Butter Cream</option>
+      </select></span>
+      </div>
+      
+      <legend>Additional Information</legend>
+      <div class="form-group">
+      <label class="control-label col-md-4" for="pic">Picture on Cake:</label>
+      <span class="col-md-6">
+      <select class="form-control" name="pic" id="pic">
+        <option value="No" selected="selected">No</option>
+        <option value="Yes">Yes</option>
+      </select></span>
+      </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="comment">Please enter additional details:</label>
+        <div class="col-md-6">
+            <textarea rows="6" class="form-control" id="comments" name="comments" placeholder="example desired colors and writing"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6">
+            <button type="submit" value="Submit" class="btn btn-custom pull-right">Send</button>
+        </div>
+    </div>
+</form>
+
+		</section><!--End section-order-->
+	</div>
+<!--End container order-->
+
+{% include "_footer.html"%}
+
+<!--end footer-->
+
+  <!--FORM VALIDATION-->
+  <script type="text/javascript" src="../js/validate.js">   
+  </script>
+  <!--FORM VALIDATION END-->
+
+	<!-- JQuery 
+	==========================================================-->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<!--End JQuery-->
+	<!-- Latest compiled and minified JavaScript Bootstrap
+	======================================================-->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!--End Bootstrap JS-->
+
+
+  
+</body>	
+</html>
