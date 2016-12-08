@@ -3215,3 +3215,8 @@ html, body{
     padding-right: 15px;
     padding-left: 15px;
     }
+footer{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}

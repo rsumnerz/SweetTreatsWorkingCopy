@@ -37,6 +37,11 @@ var gulp = require('gulp'),
 			refresh.reload();
 		});
 
+		
+		watch("js/**/*.js", function(){
+			refresh.reload();
+			});
+
 		watch('mainCss/**/*.css', function(){
 			gulp.start('cssInject');
 		});
@@ -47,6 +52,9 @@ var gulp = require('gulp'),
 		gulp.src('css/style.css')
 		.pipe(refresh.stream());
 	});
+
+
+
 
 
 
