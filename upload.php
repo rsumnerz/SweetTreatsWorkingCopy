@@ -20,15 +20,54 @@ if(isset($_FILES) && (bool) $_FILES) {
 		array_push($files,$file);
 	}
 	
+	 // validation expected data exists
+    if(!isset($_POST['fname']) ||
+        !isset($_POST['lname']) ||
+        !isset($_POST['phone'])||
+        !isset($_POST['email'])){
+        died('We are sorry, but there appears to be a problem with the form you submitted.');       
+    }
+    //new code end
+
 	// email fields: to, from, subject, and so on
 	$to = "AnnMarieTorres@outlook.com";
-	$from = $_POST['email'];
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname']; 
-	$phone = $_POST['phone'];
+	$from = $_POST['email'];//required
+	$fname = $_POST['fname'];//required
+	$lname = $_POST['lname']; //required
+	$phone = $_POST['phone'];//required
 	$subject ="picture cake attachment"; 
+	$error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+  if(!preg_match($email_exp,$from)) {
+    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+  }
+    $string_exp = "/^[A-Za-z\s.'-]+$/";
+  if(!preg_match($string_exp,$fname)) {
+    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+  } 
+  if(!preg_match($string_exp,$lname)) {
+    $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+  }
+     $phone_exp ="/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i";
+  if(!preg_match($phone_exp, $phone)){
+    $error_message .= 'The Phone Number you entered does not appear to be valid.<br />';
+  }
+  
+  if(strlen($error_message) > 0) {
+    died($error_message);
+  }
 
-	$message = "First Name: $fname \nLast Name: $lname \nPhone: $phone\n";
+	$message = "Form details below.\n\n";
+ 	
+    function clean_string($string) {
+      $bad = array("content-type","bcc:","to:","cc:","href");
+      return str_replace($bad,"",$string);
+    } 
+    $message .= "First Name: ".clean_string($fname)."\n";
+    $message .= "Last Name: ".clean_string($lname)."\n";
+    $message .= "Phone Number: ".clean_string($phone)."\n";
+    $message .= "Email: ".clean_string($email)."\n";  
+	
 	$headers = "From: $from";
 	
 	// boundary 
