@@ -54,7 +54,7 @@ if(isset($_FILES) && (bool) $_FILES) {
   }
   
   if(strlen($error_message) > 0) {
-    died($error_message);
+    die($error_message);
   }
 
 	$message = "Form details below.\n\n";
@@ -66,7 +66,7 @@ if(isset($_FILES) && (bool) $_FILES) {
     $message .= "First Name: ".clean_string($fname)."\n";
     $message .= "Last Name: ".clean_string($lname)."\n";
     $message .= "Phone Number: ".clean_string($phone)."\n";
-    $message .= "Email: ".clean_string($email)."\n";  
+    $message .= "Email: ".clean_string($from)."\n";  
 	
 	$headers = "From: $from";
 	
