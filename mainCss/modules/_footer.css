@@ -1,3 +1,25 @@
-footer{
-	display: flex;
+
+
+
+.test{
+	background-color: rgba(0, 0, 0, 0.5);
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	bottom:0;
+	z-index: 999;
+
+/*	p, h3{
+		display:none;
+	}
+	img{
+		margin-top: 8rem;
+		width: 30rem;
+		height: 30rem;
+	}*/
 }
+
+/*.modal{
+	display:none;
+}*/

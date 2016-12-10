@@ -37,6 +37,8 @@ var gulp = require('gulp'),
 			refresh.reload();
 		});
 
+		watch('structureCompile/**/*.html', ['nunjucks']);
+
 		
 		watch("js/**/*.js", function(){
 			refresh.reload();

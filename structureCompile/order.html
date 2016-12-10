@@ -12,11 +12,12 @@
 <!--order-->
 	<div class="container">
 		<section id="section-order">
+
 			<div class="page-header text-center" id="order">
 				<h2>Order Form<small> </small></h2>
 			</div><!--End Page Header services-->
 			
-			<form class="form-horizontal" name="orderform" method="post" action="send_form_email.php" enctype="multipart/form-data" onsubmit="return validate(this)">
+			<form class="form-horizontal" name="orderform" method="post" action="../send_form_email.php" enctype="multipart/form-data" onsubmit="return validate(this)">
 	<legend>Customer Information</legend>
     <div class="form-group">
         <label class="control-label col-md-4" for="first_name">First Name</label>
@@ -177,6 +178,11 @@
         <option value="No" selected="selected">No</option>
         <option value="Yes">Yes</option>
       </select></span>
+       <label class="control-label col-md-4" for="pic">Upload Picture:</label>
+       <span class="col-md-6">
+      <p>Click <a target="_blank" href="upload.html">here</a> to upload picture.</p>
+      </select></span>
+      
       </div>
     <div class="form-group">
         <label class="control-label col-md-4" for="comment">Please enter additional details:</label>

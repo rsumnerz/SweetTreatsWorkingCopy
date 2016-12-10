@@ -102,7 +102,7 @@ $headers2 = 'From: '.$email_to."\r\n".
 'X-Mailer: PHP/' . phpversion();
 @mail($email_from, $email_subject2, $email_message, $headers2);
 sleep(2);
-echo "<meta http-equiv='refresh' content=\"0; url=http://nameincode.com/ThankYou.html\">";
+echo "<meta http-equiv='refresh' content=\"0; url=http://bakery.nameincode.com/app/ThankYou.html\">";
 ?>
  
 <?php
