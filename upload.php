@@ -20,17 +20,6 @@ if(isset($_FILES) && (bool) $_FILES) {
 		array_push($files,$file);
 	}
 	
-<<<<<<< HEAD
-	// email fields: to, from, subject, and so on
-	$to = "AnnMarieTorres@outlook.com";
-	$from = $_POST['email'];
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname']; 
-	$phone = $_POST['phone'];
-	$subject ="picture cake attachment"; 
-
-	$message = "First Name: $fname \nLast Name: $lname \nPhone: $phone\n";
-=======
 	 // validation expected data exists
     if(!isset($_POST['fname']) ||
         !isset($_POST['lname']) ||
@@ -39,7 +28,6 @@ if(isset($_FILES) && (bool) $_FILES) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
     //new code end
-
 	// email fields: to, from, subject, and so on
 	$to = "AnnMarieTorres@outlook.com";
 	$from = $_POST['email'];//required
@@ -67,7 +55,6 @@ if(isset($_FILES) && (bool) $_FILES) {
   if(strlen($error_message) > 0) {
     die($error_message);
   }
-
 	$message = "Form details below.\n\n";
  	
     function clean_string($string) {
@@ -79,7 +66,6 @@ if(isset($_FILES) && (bool) $_FILES) {
     $message .= "Phone Number: ".clean_string($phone)."\n";
     $message .= "Email: ".clean_string($from)."\n";  
 	
->>>>>>> upstream/master
 	$headers = "From: $from";
 	
 	// boundary 
