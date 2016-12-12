@@ -1,5 +1,6 @@
-@import "global/_global.css";
 @import "animate.css";
 @import "normal.css";
+@import "global/_global.css";
 @import "modules/_header.css";
+@import "modules/_content.css";
 @import "modules/_footer.css";

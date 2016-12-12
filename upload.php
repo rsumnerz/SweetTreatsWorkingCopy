@@ -28,7 +28,6 @@ if(isset($_FILES) && (bool) $_FILES) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
     //new code end
-
 	// email fields: to, from, subject, and so on
 	$to = "AnnMarieTorres@outlook.com";
 	$from = $_POST['email'];//required
@@ -56,7 +55,6 @@ if(isset($_FILES) && (bool) $_FILES) {
   if(strlen($error_message) > 0) {
     die($error_message);
   }
-
 	$message = "Form details below.\n\n";
  	
     function clean_string($string) {

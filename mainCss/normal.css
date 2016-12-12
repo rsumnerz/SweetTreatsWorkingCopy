@@ -49,11 +49,11 @@
 
 }
 
-.thumbnail >img{
+/*.thumbnail >img{
 	max-height: 200px;
 	max-width: 192px;
 
-}
+}*/
 .thumbnail .caption{
 	text-align: center;
 }

@@ -23,4 +23,3 @@ function validate(form){
       return (field=="") ? "Please enter your Email.\n" : "";
     }
     
-    
