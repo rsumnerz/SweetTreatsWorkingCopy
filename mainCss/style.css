@@ -3,4 +3,5 @@
 @import "global/_global.css";
 @import "modules/_header.css";
 @import "modules/_content.css";
+@import "modules/_popUp.css";
 @import "modules/_footer.css";
