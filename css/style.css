@@ -3040,4 +3040,10 @@
 	box-shadow: 5px 9px 15px rgba(0, 0, 0, 0.5);
 }#gallary-section .row{
 	margin:0;
+}.reveal-services{
+	opacity: 0;
+	-webkit-transition: all 300ms ease-in;
+	transition: all 300ms ease-in;
+}.js-animate{
+	opacity:1;
 }

@@ -52,9 +52,13 @@
 	//$(".reveal-services").remove();
 	var $revealServices = $('.reveal-services');
 
-	$revealServices.waypoint(function () {
-		console.log('Waypoint');
-	});
+	$revealServices.waypoint(function (direction) {
+		if (direction == 'down') {
+			$revealServices.addClass('js-animate');
+		} else {
+			$revealServices.removeClass('js-animate');
+		}
+	}, { offset: '75%' });
 
 /***/ },
 /* 1 */
