@@ -3,6 +3,59 @@
 	transition: all 300ms ease-in;
 }
 
+.reveal-services1{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services2{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+.reveal-services3{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services4{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services5{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services6{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services7{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services8{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services9{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services10{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.reveal-services11{
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
 .js-animate{
 	opacity:1;
 }
