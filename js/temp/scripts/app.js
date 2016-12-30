@@ -48,7 +48,7 @@
 
 	var waypoint = __webpack_require__(1).waypoint;
 
-	alert("abc123456");
+	//alert("abc123456");
 	//$(".reveal-services").remove();
 	var $revealServices = $('.reveal-services');
 
