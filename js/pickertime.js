@@ -6,7 +6,7 @@ var dateToday = new Date();
 
 
 // Adding 5 days to the current day
-dateToday.setDate(dateToday.getDate() + 5);
+dateToday.setDate(dateToday.getDate() + 3);
 
 
 $(function() {
