@@ -1,0 +1,128 @@
+.board{
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 767px){
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+
+	@media(min-width: 414px){
+		display:flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+	}
+
+
+
+	& .firstSection{
+		display: flex;
+		flex-direction: column;
+
+
+	@media (min-width: 767px){
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		/*padding:2rem;*/
+		}
+
+	@media (min-width: 414px){
+		display:flex;
+		flex-direction:row;
+		justify-content:center;
+		flex-wrap:wrap;
+	}
+	}
+
+
+
+
+
+	& .firstSection div{
+
+		width:35rem;
+		height:25rem;
+		/*border:1px solid #000;*/
+		margin:auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+
+
+
+		@media (min-width: 767px){
+		/*background: red;*/
+		width:25rem;
+		height: 25rem;
+	/*	margin:2rem;*/
+		/*border:1px solid #000;*/
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color:#000;
+		}
+
+
+		@media(min-width: 414px){
+			width:29rem;
+			height:24rem;
+		}
+	}
+
+
+	& .firstSection .two{
+	background-image:url('../ImagesPro/tiramisu.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+
+
+
+	& .secondSection .one {
+	background-image:url('../ImagesPro/cake.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+
+	& .secondSection .two{
+	background:none;
+	}
+
+	.secondSection .three{
+		background-image: url("../ImagesPro/cookies2.jpg");
+		background-size: cover;
+	}
+
+	.thirdSection .two{
+		background-image: url("../ImagesPro/strawberryCake.jpg");
+		background-size: cover;
+	}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
