@@ -3041,6 +3041,7 @@
 }#gallary-section .row{
 	margin:0;
 }.board{
+	margin-top:20rem;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -3210,4 +3211,48 @@
 	transition: all 300ms ease-in;
 }.js-animate{
 	opacity:1;
+}.story{
+	position: relative;
+	top: 0;
+	left: 0;
+	
+}.story img{
+  position: absolute;
+  z-index: -1;
+  color: #000;/*background-image:url('../Images/counter2a.jpg');*/
+  background-size: cover;
+  width: 100%;
+  height: 50rem;
+  opacity: 0.75;/*@media (min-width: 767px){
+		
+		height: 60rem;
+
+	}
+
+	@media(min-width: 414px){
+		
+		height: 75rem;
+	}*/
+}.story h1{
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  color: #000;
+  font-family: 'open sans', Helvetica, sans-serif;
+  font-size: 4.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+}.story p{
+  position: relative;
+  z-index: 1;
+  opacity: 1.0;
+  color: #000;
+  font-family: 'Lobster Two', Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: .75rem;
+  line-height: 26px;
 }
