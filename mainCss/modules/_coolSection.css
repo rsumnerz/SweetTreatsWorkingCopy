@@ -82,6 +82,10 @@
 	background-repeat: no-repeat;
 	}
 
+/*	& .firstSection .one:hover{
+		background:red;
+	}*/
+
 
 
 	& .secondSection .one {

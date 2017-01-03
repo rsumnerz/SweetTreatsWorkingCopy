@@ -2967,41 +2967,78 @@
 	font-size: 12px;
 	text-align: justify;
 	word-spacing: 1px;
-}@media (max-width: 992px) {
-  .navbar-header {
-      float: none;
+}.imageContainer{
+  margin-top:10rem;
+
+  display:-webkit-box;
+
+  display:-ms-flexbox;
+
+  display:flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+}.imageContainer div{
+  /*margin:2rem;*/
+  background:red;
+  width:25rem;
+  height:20rem;
+}.imageContainer .testOne{
+  background:url("../imagesPro/cake.jpg");
+  background-size: cover;
+  margin-top: 8rem;
+  width: 30rem;
+  
+}@media (min-width: 1100px){.imageContainer .testOne{
+    width: 40rem;
+    height: 30rem;
   }
-  .navbar-left,.navbar-right {
-      float: none !important;
+}.imageContainer .unique{
+  position:absolute;
+  width:30rem;
+  height:35rem;
+
+  background:#9bb3c5;
+
+  padding:1.9rem;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: 1px;
+  border-radius: 4px;
+
+
+}@media (min-width: 1100px){.imageContainer .unique{
+    width: 35rem;
+    height: 45rem;
   }
-  .navbar-toggle {
-      display: block;
-  }
-  .navbar-collapse {
-      border-top: 1px solid transparent;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-  }
-  .navbar-fixed-top {
-      top: 0;
-      border-width: 0 0 1px;
-  }
-  .navbar-collapse.collapse {
-      display: none!important;
-  }
-  .navbar-nav {
-      float: none!important;
-      margin-top: 7.5px;
-  }
-  .navbar-nav>li {
-      float: none;
-  }
-  .navbar-nav>li>a {
-      padding-top: 10px;
-      padding-bottom: 10px;
-  }
-  .collapse.in{
-      display:block !important;
-  }
+}.imageContainer .unique h1{
+  text-align: center;
+  font-size:1.5rem;
+}.imageContainer .unique i{
+  font-size:3rem;
+}.imageContainer .unique .store{
+  font-size: 1.5rem;
+}.imageContainer .unique img{
+  width:5rem;
+  height:5rem;
+  border-radius: 50%;
+}.imageContainer .unique .title{
+  font-size:1.5rem;
 }/*.row a img{
 	
 }*/.test{
@@ -3148,7 +3185,9 @@
   background-image:url('../ImagesPro/tiramisu.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-}.board .secondSection .one {
+}/*	& .firstSection .one:hover{
+		background:red;
+	}*/.board .secondSection .one {
   background-image:url('../ImagesPro/cake.jpg');
   background-size: cover;
   background-repeat: no-repeat;
