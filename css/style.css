@@ -3295,47 +3295,41 @@
   text-align: center;
   padding-bottom: .75rem;
   line-height: 26px;
-}#cakeGallery{
-	display: -webkit-box;
-	display: -ms-flexbox;
+}/*#cakeGallery{
 	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
 	
-	}#cakeGallery .imageBox{
+	}
+	#cakeGallery .imageBox{
 		width: 225px;
 		height: 150px;
 		background-size: contain;
 		background-image: cover;
 		overflow: hidden;
-		/*background-color: red;*/
+		/*background-color: red;
 
-	}#cakeGallery .imageBox2{
-		width: 225px;
+	}
+
+	#cakeGallery .imageBox2{
+		width: 250px;
 		height: 150px;
 		background-size: contain;
 		background-image: cover;
 		overflow: hidden;
-		/*background-color: green;*/
-	}.image{
-		width: 225px;
+		/*background-color: green;
+	}
+	.image{
+		width: 250px;
 		height: 150px;
 		background-image: cover;
 		background-size: contain;
 		overflow: hidden;
 
-	}.thumbnail{
-		width: 225px;
+	}*/.thumbnail{
+		width: 265px;
 		height: 150px;
 		background-image: cover;
 		background-size: contain;

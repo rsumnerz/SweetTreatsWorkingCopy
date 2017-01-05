@@ -1,4 +1,4 @@
-	#cakeGallery{
+	/*#cakeGallery{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -12,28 +12,28 @@
 		background-size: contain;
 		background-image: cover;
 		overflow: hidden;
-		/*background-color: red;*/
+		/*background-color: red;
 
 	}
 
 	#cakeGallery .imageBox2{
-		width: 225px;
+		width: 250px;
 		height: 150px;
 		background-size: contain;
 		background-image: cover;
 		overflow: hidden;
-		/*background-color: green;*/
+		/*background-color: green;
 	}
 	.image{
-		width: 225px;
+		width: 250px;
 		height: 150px;
 		background-image: cover;
 		background-size: contain;
 		overflow: hidden;
 
-	}
+	}*/
 	.thumbnail{
-		width: 225px;
+		width: 265px;
 		height: 150px;
 		background-image: cover;
 		background-size: contain;
