@@ -11,7 +11,8 @@
 	<!--Font Awesome-->
 	<link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
 	<!--http://fontawesome.io/icons/-->
-	
+	<!-- lightbox -->
+	<link href="../../node_modules/lightbox.css" rel="stylesheet">
 	<!-- Template styles÷÷÷÷÷÷÷÷÷÷÷÷///////90
 
 	<!-- Latest compiled and minified CSS -->
@@ -96,28 +97,28 @@
 			  <div class="col-sm-6 col-md-3" onclick="thumbnail(this)">
 			  <div class ="reveal-services">
 			    <a href="#row" class="thumbnail" >
-			      <img src="../images/1.jpg" alt="...">
+			      <img src="../ImagesPro/bananna.jpg" alt="..." class="testing1">
 			    </a>
 			    </div>
 			  </div>
 			  <div class ="reveal-services1">
 			  <div class="col-sm-6 col-md-3" onclick="thumbnail(this)">
 			    <a href="#row" class="thumbnail" >
-			      <img src="../images/2.jpg" alt="...">
+			      <img src="../ImagesPro/biscotti.jpg" alt="..." class="testing1">
 			    </a>
 			    </div>
 			  </div>
 			  <div class ="reveal-services2">
 			  <div class="col-sm-6 col-md-3" onclick="thumbnail(this)">
 			    <a href="#row" class="thumbnail" >
-			      <img src="../images/3.jpg" alt="...">
+			      <img src="../ImagesPro/cake.jpg" alt="..." class="testing1">
 			    </a>
 			    </div>
 			  </div>
 			  <div class ="reveal-services3">
 			  <div class="col-sm-6 col-md-3" onclick="thumbnail(this)">
 			    <a href="#row" class="thumbnail" >
-			      <img src="../images/4.jpg" alt="...">
+			      <img src="../ImagesPro/icecream.jpg" alt="..." class="testing1">
 			    </a>
 			    </div>
 			  </div>
@@ -239,13 +240,19 @@
 	<!-- Latest compiled and minified JavaScript Bootstrap
 	======================================================-->
 	<script src="../js/temp/scripts/app.js"></script>
-	
+	<script src="../../node_modules/lightbox.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!--End Bootstrap JS-->
 
 	<script src="../js/popUp.js"></script>
-
+	<script>
+    lightbox.option({
+      'resizeDuration': 50,
+      'wrapAround': true,
+      'maxWidth': 50px
+    })
+</script>
 
 
   
