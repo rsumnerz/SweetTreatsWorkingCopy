@@ -3313,25 +3313,32 @@
 	        align-items: center;
 	
 	}#cakeGallery .imageBox{
-		width: 25rem;
-		height: auto;
+		width: 225px;
+		height: 150px;
 		background-size: contain;
+		background-image: cover;
+		overflow: hidden;
 		/*background-color: red;*/
 
 	}#cakeGallery .imageBox2{
-		width: 25rem;
-		height: auto;
+		width: 225px;
+		height: 150px;
 		background-size: contain;
+		background-image: cover;
+		overflow: hidden;
 		/*background-color: green;*/
 	}.image{
-		width: 200px;
-		height: auto;
+		width: 225px;
+		height: 150px;
 		background-image: cover;
 		background-size: contain;
+		overflow: hidden;
 
-	}.testing1{
-		width: 250px;
-		height:250px;
+	}.thumbnail{
+		width: 225px;
+		height: 150px;
+		background-image: cover;
 		background-size: contain;
-		
+		overflow: hidden;
+
 	}
