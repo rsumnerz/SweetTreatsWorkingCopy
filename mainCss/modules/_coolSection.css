@@ -2,6 +2,7 @@
 	margin-top:20rem;
 	display: flex;
 	flex-direction: column;
+	margin-top: 25rem;
 
 	@media (min-width: 767px){
 		display: flex;

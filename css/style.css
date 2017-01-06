@@ -2979,6 +2979,7 @@
       -ms-flex-pack: center;
           justify-content: center;
 
+<<<<<<< HEAD
 }.imageContainer div{
   /*margin:2rem;*/
   background:red;
@@ -2991,13 +2992,36 @@
   width: 30rem;
   
 }@media (min-width: 1100px){.imageContainer .testOne{
+=======
+}.imageContainer .testOne{
+  background:url("../imagesPro/cake.jpg");
+  background-size: cover;
+  margin-top: 12rem;
+  border: 4px;
+  width: 19rem;
+  height: 15rem;
+  
+}@media (min-width: 420px){.imageContainer .testOne{
+    margin-top: 8rem;
+    width: 30rem;
+    height: 20rem;
+  }
+}@media (min-width: 1100px){.imageContainer .testOne{
+    margin-top: 8rem;
+>>>>>>> 9a94dfc606d7bfe8e0dc77413e3d07bf397b254c
     width: 40rem;
     height: 30rem;
   }
 }.imageContainer .unique{
   position:absolute;
+<<<<<<< HEAD
   width:30rem;
   height:35rem;
+=======
+  width:25rem;
+  height:40rem;
+  left:8rem;
+>>>>>>> 9a94dfc606d7bfe8e0dc77413e3d07bf397b254c
 
   background:#9bb3c5;
 
@@ -3022,14 +3046,27 @@
   border-radius: 4px;
 
 
+<<<<<<< HEAD
 }@media (min-width: 1100px){.imageContainer .unique{
+=======
+}@media (min-width: 420px){.imageContainer .unique{
+    left: auto;
+    width: 30rem;
+    height: 35rem;
+  }
+}@media (min-width: 1100px){.imageContainer .unique{
+    left: auto;
+>>>>>>> 9a94dfc606d7bfe8e0dc77413e3d07bf397b254c
     width: 35rem;
     height: 45rem;
   }
 }.imageContainer .unique h1{
   text-align: center;
   font-size:1.5rem;
+<<<<<<< HEAD
   min-width: 100rem;
+=======
+>>>>>>> 9a94dfc606d7bfe8e0dc77413e3d07bf397b254c
 }.imageContainer .unique i{
   font-size:3rem;
 }.imageContainer .unique .store{
@@ -3087,6 +3124,7 @@
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
+	margin-top: 25rem;
 
 
 
