@@ -1,20 +1,27 @@
 .board{
-	margin-top:20rem;
 	display: flex;
 	flex-direction: column;
 	margin-top: 25rem;
 
-	@media (min-width: 767px){
-		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-	}
+	
 
 	@media(min-width: 414px){
 		display:flex;
-		flex-direction:row;
+		flex-direction:column;
 		flex-wrap:wrap;
 	}
+
+	@media (min-width: 767px){
+		display: flex;
+		justify-content: space-around;
+		flex-direction:row;
+		flex-wrap: wrap;
+		/*border:1px solid red;*/
+
+	}
+
+
+
 
 
 
@@ -23,12 +30,7 @@
 		flex-direction: column;
 
 
-	@media (min-width: 767px){
-		display: flex;
-		justify-content: center;
-		flex-direction: row;
-		/*padding:2rem;*/
-		}
+	
 
 	@media (min-width: 414px){
 		display:flex;
@@ -36,6 +38,25 @@
 		justify-content:center;
 		flex-wrap:wrap;
 	}
+
+	@media (min-width: 565px){
+		/*border:1px solid red;*/
+		flex-direction:column;
+	}
+
+	@media (min-width: 767px){
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		border:none;
+		/*padding:2rem;*/
+		/*border:1px solid red;*/
+		}
+
+		@media (min-width: 1000px){
+			flex-direction:row;
+		}
+
 	}
 
 
@@ -54,28 +75,55 @@
 		flex-direction: column;
 
 
-
-
-		@media (min-width: 767px){
-		/*background: red;*/
-		width:25rem;
-		height: 25rem;
-	/*	margin:2rem;*/
-		/*border:1px solid #000;*/
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		color:#000;
-		}
-
-
 		@media(min-width: 414px){
 			width:29rem;
 			height:24rem;
 		}
+
+		@media (min-width: 565px){
+			width:45rem;
+			height:35rem;
+		}
+
+
+		@media (min-width: 767px){
+			/*background: red;*/
+			width:25rem;
+			height: 25rem;
+		/*	margin:2rem;*/
+			/*border:1px solid #000;*/
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			color:#000;
+		}
+
+
+		@media (min-width: 1500px){
+			width:35rem;
+			height:27rem;
+		}
 	}
+
+& .thirdSection{
+	@media (min-width: 767px){
+		display: none;
+	}
+
+	@media (min-width: 1000px){
+		display:flex;
+	}
+}
+
+
+
+
+
+
+
+	
 
 
 	& .firstSection .two{
