@@ -13,8 +13,17 @@
   background-size: cover;
   margin-top: 12rem;
   border: 4px;
-  width: 19rem;
+  display: none;
+  width: 10rem;
   height: 15rem;
+
+  @media (min-width: 321px){
+    display: block;
+    margin-top: 12rem;
+    border: 4px;
+    width: 17rem;
+    height: 15rem;
+  }
 
   @media (min-width: 420px){
     margin-top: 8rem;
@@ -35,10 +44,10 @@
 
 
 .imageContainer .unique{
-  position:absolute;
-  width:25rem;
+  position:relative;
+  width:27rem;
   height:40rem;
-  left:8rem;
+  left:2rem;
 
   background:#9bb3c5;
 
@@ -50,6 +59,22 @@
   flex-direction: column;
   line-height: 1px;
   border-radius: 4px;
+
+  @media (min-width: 321px){
+    display: flex;
+    position:absolute;
+    width:25rem;
+    height:40rem;
+    left:6rem;
+  }
+
+  @media(min-width: 384px){
+    left:7.5rem;
+  }
+
+  @media(min-width: 414px){
+    left:8.5rem;
+  }
 
 
   @media (min-width: 420px){

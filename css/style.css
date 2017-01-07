@@ -2984,9 +2984,17 @@
   background-size: cover;
   margin-top: 12rem;
   border: 4px;
-  width: 19rem;
+  display: none;
+  width: 10rem;
   height: 15rem;
   
+}@media (min-width: 321px){.imageContainer .testOne{
+    display: block;
+    margin-top: 12rem;
+    border: 4px;
+    width: 17rem;
+    height: 15rem;
+  }
 }@media (min-width: 420px){.imageContainer .testOne{
     margin-top: 8rem;
     width: 30rem;
@@ -2998,10 +3006,10 @@
     height: 30rem;
   }
 }.imageContainer .unique{
-  position:absolute;
-  width:25rem;
+  position:relative;
+  width:27rem;
   height:40rem;
-  left:8rem;
+  left:2rem;
 
   background:#9bb3c5;
 
@@ -3026,6 +3034,21 @@
   border-radius: 4px;
 
 
+}@media (min-width: 321px){.imageContainer .unique{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    width: 25rem;
+    height: 40rem;
+    left: 6rem;
+  }
+}@media(min-width: 384px){.imageContainer .unique{
+    left: 7.5rem;
+  }
+}@media(min-width: 414px){.imageContainer .unique{
+    left: 8.5rem;
+  }
 }@media (min-width: 420px){.imageContainer .unique{
     left: auto;
     width: 30rem;
@@ -3099,25 +3122,29 @@
 
 
 
+}@media(min-width: 414px){.board{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }@media (min-width: 767px){.board{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}@media(min-width: 414px){.board{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+        flex-wrap: wrap;/*border:1px solid red;*/
   }
 }.board .firstSection{
   display: -webkit-box;
@@ -3127,18 +3154,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}@media (min-width: 767px){.board .firstSection{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;/*padding:2rem;*/
-  }
 }@media (min-width: 414px){.board .firstSection{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3152,6 +3167,31 @@
             justify-content: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+}@media (min-width: 565px){.board .firstSection{/*border:1px solid red;*/
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}@media (min-width: 767px){.board .firstSection{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: none;/*padding:2rem;*//*border:1px solid red;*/
+  }
+}@media (min-width: 1000px){.board .firstSection{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }.board .firstSection div{
   width:35rem;
@@ -3170,6 +3210,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}@media(min-width: 414px){.board .firstSection div{
+    width: 29rem;
+    height: 24rem;
+  }
+}@media (min-width: 565px){.board .firstSection div{
+    width: 45rem;
+    height: 35rem;
+  }
 }@media (min-width: 767px){.board .firstSection div{/*background: red;*/
     width: 25rem;
     height: 25rem;/*	margin:2rem;*//*border:1px solid #000;*/
@@ -3188,9 +3236,17 @@
             flex-direction: column;
     color: #000;
   }
-}@media(min-width: 414px){.board .firstSection div{
-    width: 29rem;
-    height: 24rem;
+}@media (min-width: 1500px){.board .firstSection div{
+    width: 35rem;
+    height: 27rem;
+  }
+}@media (min-width: 767px){.board .thirdSection{
+    display: none;
+  }
+}@media (min-width: 1000px){.board .thirdSection{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }.board .firstSection .two{
   background-image:url('../ImagesPro/tiramisu.jpg');
