@@ -3350,8 +3350,13 @@
 		overflow: hidden;
 
 	}*/.thumbnail{
-		max-width: 265px;
-		max-height: 175px;
+		width: 265px;
+		height: 175px;
+		min-width: 265px;
+		min-height: 175px;
+		max-width: 865px;
+		max-height: 775px;
+
 		
 		background-image: cover;
 		background-size: contain;
